@@ -16,6 +16,7 @@ namespace Command
         {
             command = null;
         }
+        
         public Invoker(ICommand command)
         {
             Console.WriteLine("INVOKER: Creating invoker");

@@ -1,6 +1,6 @@
 from ICommand import ICommand
 
-class Invoker:
+class Invoker():
     def __init__(self) -> None:
         print("INVOKER: Creating invoker\n")
         self.command = None

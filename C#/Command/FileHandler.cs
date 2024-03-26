@@ -19,12 +19,11 @@ namespace Command
             alreadySaved = false;
         }
 
-        public bool SaveFile()
+        public void SaveFile()
         {
             if (alreadySaved) return false;
             Console.WriteLine("Saved file: " + fileName.ToString() + " on " + date.ToString());
-            alreadySaved = true;
-            return true;
+            alreadySaved = true;            
         }
 
         public void ChangeFile()

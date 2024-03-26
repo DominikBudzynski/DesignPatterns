@@ -1,10 +1,10 @@
-from SimpleCalc import SimpleCalc
+from FileHandler import FileHandler
 from Invoker import Invoker
-from AddCommand import AddCommand
+from SaveCommand import SaveCommand
 
 if __name__ == "__main__":
-    digits = [1, 15]
+    file = "FILE1"
+    fileHandler = FileHandler(file)
 
-    calc = SimpleCalc()
-    invoker = Invoker(AddCommand(calc, digits))
+    invoker = Invoker(SaveCommand(fileHandler))
     invoker.ExecuteCommand()
