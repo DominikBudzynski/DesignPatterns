@@ -7,22 +7,20 @@ using System.Threading.Tasks;
 
 namespace Command
 {
-    class AddCommand : ICommand
+    class SaveCommand : ICommand
     {
-        private SimpleCalc calculator;
-        private List<double> digits;
+        private FileHandler fileHandler;        
 
-        public AddCommand(SimpleCalc calculator, List<double> digits)
+        public SaveCommand(FileHandler fileHadnler)
         {
             Console.WriteLine("COMMAND: Creating command");
-            this.calculator = calculator;
-            this.digits = digits;            
+            this.fileHandler = fileHadnler;            
         }
 
         public void Execute()
         {
             Console.WriteLine("COMMAND: Executing command from invoker, delgating to logic");
-            calculator.Sum(digits);
+            fileHandler.SaveFile();
         }
     }
 }

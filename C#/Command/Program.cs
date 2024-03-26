@@ -7,15 +7,11 @@ namespace Command
     {
         static void Main()
         {
-            List<double> digits = new List<double>();
-            digits.Append(1);
-            digits.Append(2);
-            digits.Append(3);
+            string file = "FILE1";
+            FileHandler handler = new FileHandler(file);
 
-            SimpleCalc calc = new SimpleCalc();
-            Invoker button = new Invoker(new AddCommand(calc, digits));
+            Invoker button = new Invoker(new SaveCommand(handler));
             button.ExecuteCommand();
-
         }
     }
 }
