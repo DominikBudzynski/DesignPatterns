@@ -30,9 +30,8 @@ namespace Memento.Memento
         }               
 
         public override string ToString()
-        {
-            Console.Write("MEMENTO: Getting memento state: ");
-            return state.ToString();
+        {            
+            return $"State: {state.ToString()}";
         }
     }
 }

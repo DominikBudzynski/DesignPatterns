@@ -17,7 +17,7 @@ namespace Memento.Memento
         {
             Console.WriteLine("ORIGINATOR: Creating originator");
             this.state = state;
-            name = "multiplier x 1";
+            name = "power x 1";
             counter = 1;
             date = DateTime.Now;
         }
@@ -39,11 +39,10 @@ namespace Memento.Memento
 
         //simulating important logic operations
         public void DoubleState()
-        {
-            //Console.WriteLine("ORIGINATOR: Changing state value");
+        {            
             state *= 2;
             counter++;
-            name = "multiplier x " + counter.ToString();
+            name = "power x " + counter.ToString();
         }
 
         public override string ToString()

@@ -39,7 +39,7 @@ namespace Memento.Memento
         public void ShowHistory()
         {
             Console.WriteLine("HISTORY");
-            foreach (Memento mem in history)
+            foreach (IMemento mem in history)
             {
                 Console.WriteLine(mem.ToString());
             }
