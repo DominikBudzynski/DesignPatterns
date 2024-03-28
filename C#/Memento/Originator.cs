@@ -11,6 +11,7 @@ namespace Memento.Memento
         private int state;
         private string name;
         private int counter;
+        private DateTime date;
 
         public Originator(int state)
         {
@@ -18,13 +19,14 @@ namespace Memento.Memento
             this.state = state;
             name = "multiplier x 1";
             counter = 1;
+            date = DateTime.Now;
         }
 
         //creating memento initialized with originator internal state
         public IMemento CreateBackup()
         {
             Console.WriteLine("ORIGINATOR: Saving state");
-            return new Memento(this, state, name);
+            return new Memento(this, state, name, date);
 
         }
 

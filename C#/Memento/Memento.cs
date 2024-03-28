@@ -10,20 +10,22 @@ namespace Memento.Memento
     {
         private int state;
         private string name;
+        private DateTime date;
         private Originator originator;
 
-        public Memento(Originator originator, int state, string name)
+        public Memento(Originator originator, int state, string name, DateTime date)
         {
             Console.WriteLine("MEMENTO: Creating memento");
             this.originator = originator;
             this.state = state;            
             this.name = name;
+            this.date = date;
         }
 
         //restoring orignator state from memento
         public void RestoreMemento()
         {
-            Console.WriteLine("MEMENTO: Restoring state");
+            Console.WriteLine($"MEMENTO: Restoring state from {date}");
             originator.SetState(state, name);
         }               
 
