@@ -12,10 +12,10 @@ namespace Command
         private FileHandler fileHandler;
         private string fileName;
 
-        public ReadFileCommand(FileHandler fileHandler, string fileName)
+        public ReadFileCommand(FileHandler fileHadnler, string fileName)
         {
             Console.WriteLine("COMMAND: Creating command");
-            this.fileHandler = fileHandler;
+            this.fileHandler = fileHadnler;
             this.fileName = fileName;
         }
 
