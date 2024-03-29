@@ -12,29 +12,30 @@ namespace Command
         private DateTime date;
         private bool alreadySaved;
 
-        public FileHandler(string fileName)
+        public FileHandler()
         {
-            this.fileName = fileName;
+            this.fileName = "";
             date = DateTime.Now;
             alreadySaved = false;
         }
 
-        public void SaveFile()
+        public bool SaveFile(string fileName)
         {
             if (alreadySaved) return false;
-            Console.WriteLine("Saved file: " + fileName.ToString() + " on " + date.ToString());
-            alreadySaved = true;            
+            Console.WriteLine($"\nSaved file: {fileName} on + {date}");
+            alreadySaved = true;
+            return true;
         }
 
-        public void ChangeFile()
+        public void ReadFile(string fileName)
         {
-            if (alreadySaved)
+            if (alreadySaved == false)
             {
-                Console.WriteLine("Changed file successfully");
+                Console.WriteLine($"\nCan not read new file before saving current file\n");
             }
             else
             {
-                Console.WriteLine("Current file not saved, can't change file");
+                Console.WriteLine($"\nReading file: {fileName}\n");
             }
         }
     }

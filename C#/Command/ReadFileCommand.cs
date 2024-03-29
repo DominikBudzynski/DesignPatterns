@@ -7,20 +7,22 @@ using System.Threading.Tasks;
 
 namespace Command
 {
-    class SaveCommand : ICommand
+    class ReadFileCommand : ICommand
     {
-        private FileHandler fileHandler;        
+        private FileHandler fileHandler;
+        private string fileName;
 
-        public SaveCommand(FileHandler fileHadnler)
+        public ReadFileCommand(FileHandler fileHadnler, string fileName)
         {
             Console.WriteLine("COMMAND: Creating command");
-            this.fileHandler = fileHadnler;            
+            this.fileHandler = fileHadnler;
+            this.fileName = fileName;
         }
 
         public void Execute()
         {
             Console.WriteLine("COMMAND: Executing command from invoker, delgating to logic");
-            fileHandler.SaveFile();
+            fileHandler.ReadFile(fileName);
         }
     }
 }

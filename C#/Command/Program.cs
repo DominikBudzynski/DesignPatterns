@@ -8,10 +8,18 @@ namespace Command
         static void Main()
         {
             string file = "FILE1";
-            FileHandler handler = new FileHandler(file);
+            FileHandler handler = new FileHandler();
+            Invoker button = new Invoker();
 
-            Invoker button = new Invoker(new SaveCommand(handler));
+            button.SetCommand(new ReadFileCommand(handler, "FILE1"));
             button.ExecuteCommand();
+
+            button.SetCommand(new SaveFileCommand(handler, file));
+            button.ExecuteCommand();
+
+            button.SetCommand(new ReadFileCommand(handler, "FILE1"));
+            button.ExecuteCommand();
+
         }
     }
 }
